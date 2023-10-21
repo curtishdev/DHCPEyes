@@ -2,7 +2,7 @@
 **Intercept requests passively of DHCP from own network!**
 
 **Chnages v1.2 - v1.3**
-- Changed the code structure, rewritten from Python2 and Scapy 2.44 to the Latest Version of Python3.11+ and the latest Scapy 2.5.0, optimized, no kernel changes.
+- Changed the code structure, rewritten from Python2 and Scapy 2.4.4 to the Latest Version of Python3.11+ and the latest Scapy 2.5.0, optimized, no kernel changes.
 
 <img
 src="https://raw.githubusercontent.com/vincenzogianfelice/DHCPEyes/master/media/demo.png"
@@ -69,12 +69,12 @@ Optional:
 
 #### Examples
 ```
-python3 main.py -i wlan0 -t DHCPR              # Intercept only DHCPREQUEST on wlan0
-python3 main.py -t DHCPI -i wlan0 -t DHCPD     # Intercept DHCPINFORM and DHCPDISCOVER
-python3 main.py -i wlan0                       # Intercept all
+python(3) main.py -i wlan0 -t DHCPR              # Intercept only DHCPREQUEST on wlan0
+python(3) main.py -t DHCPI -i wlan0 -t DHCPD     # Intercept DHCPINFORM and DHCPDISCOVER
+python(3) main.py -i wlan0                       # Intercept all
 ```
 
 ###### Windows
 ```
-python3 main.py -i "Connessione alla rete locale (LAN)" -t DHCPR  # Using "Connessione alla rete locale (LAN)" provided from output of command netsh
+python(3) main.py -i "Connessione alla rete locale (LAN)" -t DHCPR  # Using "Connessione alla rete locale (LAN)" provided from output of command netsh
 ```
