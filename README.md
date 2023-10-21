@@ -1,6 +1,9 @@
 # DHCPEyes :eyes:
 **Intercept requests passively of DHCP from own network!**
 
+**Chnages v1.2 - v1.3**
+- Changed the code structure, rewritten from Python2 and Scapy 2.44 to the Latest Version of Python3.11+ and the latest Scapy 2.5.0, optimized, no kernel changes.
+
 <img
 src="https://raw.githubusercontent.com/vincenzogianfelice/DHCPEyes/master/media/demo.png"
 alt="DemoImage"
@@ -10,22 +13,34 @@ alt="DemoImage"
 - **Vincenzo Gianfelice**
 - **Contact**: _developer.vincenzog@gmail.com_
 - **BTC**(donation): *3EwV4zt9r5o4aTHyqjcM6CfqSVirSEmN6y*
+- **Forked by CurtishDEV**
+
+**Platforms**
+Rewritten for MacOS, 95% working code for Windows, just few changes if needed.
+
 
 # Prerequisites
-Require **python2.7** (also **python3.5**)
+Require **python3.11+**
 
-- scapy >= 2.4.4
-- termcolor
-- colorama (if you use **windows**)
+- scapy >= 2.5.0 (Latest one)
+- termcolor 
+- colorama (If you want or Windows :))
 
 ###### Windows
-- First, install [WinPcap](https://www.winpcap.org/install/)
-- After installed winpcap, run file exe after [downloaded](https://github.com/vincenzogianfelice/DHCPEyes/releases)
-- For searching interfaces on Windows, digit in prompt ```netsh interface show interfaces```, and copy the 4 column (```Nome interfaccia```/```Name interface```)
+1. Download zip
+2. Unzip, run CMD as Administrator
+3. Use options from the list to run the code
+4. Enjoy!
+
+**All CMDS**
+For all options, use 
+
+
+
 
 # Installation
 ```
-pip2 install -r requirements.txt
+pip3 (pip) install -r requirements.txt
 ```
 
 # Usage
@@ -37,9 +52,10 @@ pip2 install -r requirements.txt
 /_____/_/ /_/\____/_/   /_____/\__, /\___/____/
                               /____/
 
-        * Passive DHCP Listener! (v1.2) *
+        * Passive DHCP Listener! (v1.3) *
 
-Usage: ./dhcpeyes.py -i <interface>
+Usage: python3 main.py -i <interface>
+
 
      -i        Interface for listening
 Optional:
@@ -53,12 +69,12 @@ Optional:
 
 #### Examples
 ```
-./dhcpeyes.py -i wlan0 -t DHCPR              # Intercept only DHCPREQUEST on wlan0
-./dhcpeyes.py -t DHCPI -i wlan0 -t DHCPD     # Intercept DHCPINFORM and DHCPDISCOVER
-./dhcpeyes.py -i wlan0                       # Intercept all
+python3 main.py -i wlan0 -t DHCPR              # Intercept only DHCPREQUEST on wlan0
+python3 main.py -t DHCPI -i wlan0 -t DHCPD     # Intercept DHCPINFORM and DHCPDISCOVER
+python3 main.py -i wlan0                       # Intercept all
 ```
 
 ###### Windows
 ```
-./dhcpeyes.py -i "Connessione alla rete locale (LAN)" -t DHCPR  # Using "Connessione alla rete locale (LAN)" provided from output of command netsh
+python3 main.py -i "Connessione alla rete locale (LAN)" -t DHCPR  # Using "Connessione alla rete locale (LAN)" provided from output of command netsh
 ```
